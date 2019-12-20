@@ -15,6 +15,10 @@ virtual ~Drive();
 
 void DrivePeriodic();
 
+void ConfigTalonDefault(TalonSRX *talon);
+
+void ConfigVictorDefault(VictorSPX *victor);
+
 private:
     TalonSRX *m_leftTalonA;
     TalonSRX *m_rightTalonA;

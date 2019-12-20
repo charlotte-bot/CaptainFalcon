@@ -76,6 +76,10 @@ void Robot::TeleopPeriodic() {}
 
 void Robot::TestPeriodic() {}
 
+void Robot::DisabledInit() {}
+
+void Robot::DisabledPeriodic() {}
+
 }
 
 #ifndef RUNNING_FRC_TESTS

@@ -14,8 +14,23 @@ Drive::Drive(TalonSRX *leftTalonA,
         , m_rightVictorB(rightVictorB)
         , m_leftVictorC(leftVictorC)
         , m_rightVictorC(rightVictorC){
-        }
+    m_leftTalonA->ConfigFactoryDefault();
+    m_rightTalonA->ConfigFactoryDefault();
+    m_leftVictorB->ConfigFactoryDefault();
+    m_rightVictorB->ConfigFactoryDefault();
+    m_leftVictorC->ConfigFactoryDefault();
+    m_rightVictorC->ConfigFactoryDefault();
+}
 
 Drive::~Drive(){
+}
+
+void Drive::ConfigTalonDefault(TalonSRX *talon) {
+    talon->SetSensorPhase(false);
+    talon->SetInverted(false);
+    talon->SetNeutralMode(NeutralMode::Coast);
+}
+void Drive::ConfigVictorDefault(VictorSPX *victor) {
+    
 }
 }
