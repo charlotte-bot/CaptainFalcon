@@ -13,19 +13,18 @@
 #include <frc/smartdashboard/SendableChooser.h>
 #include "ctre/Phoenix.h"
 
+#include "subsystems/Drive.h"
+
 namespace frc973 {
-  constexpr int LEFTTALONA_CANID = 1; //devise num
-  constexpr int RIGHTTALONA_CANID = 16; //devise num
-
-  constexpr int LEFTVICTORB_CANID = 2; //devise num
-  constexpr int LEFTVICTORC_CANID = 3; //devise num
-
-  constexpr int RIGHTVICTORB_CANID = 15; //devise num
-  constexpr int RIGHTVICTORC_CANID = 14; //devise num
+constexpr int LEFT_TALONA_CANID = 1; //devise num
+constexpr int RIGHT_TALONA_CANID = 16; //devise num
+constexpr int LEFT_VICTORB_CANID = 2; //devise num
+constexpr int LEFT_VICTORC_CANID = 3; //devise num
+constexpr int RIGHT_VICTORB_CANID = 15; //devise num
+constexpr int RIGHT_VICTORC_CANID = 14; //devise num
 
 class Robot : public frc::TimedRobot {
- public:
-
+public:
   Robot();
   virtual ~Robot();
 
@@ -37,20 +36,20 @@ class Robot : public frc::TimedRobot {
   void TeleopPeriodic() override;
   void TestPeriodic() override;
 
- private:
+private:
   frc::SendableChooser<std::string> m_chooser;
   const std::string kAutoNameDefault = "Default";
   const std::string kAutoNameCustom = "My Auto";
   std::string m_autoSelected;
 
-  TalonSRX *m_leftTalonA{new TalonSRX(LEFTTALONA_CANID)};
-  TalonSRX *m_rightTalonA{new TalonSRX(RIGHTTALONA_CANID)};
+  TalonSRX *m_leftTalonA{new TalonSRX(LEFT_TALONA_CANID)};
+  TalonSRX *m_rightTalonA{new TalonSRX(RIGHT_TALONA_CANID)};
 
-  VictorSPX *m_leftVictorB{new VictorSPX(LEFTVICTORB_CANID)};
-  VictorSPX *m_leftVictorC{new VictorSPX(LEFTVICTORC_CANID)};
-  VictorSPX *m_rightVictorB{new VictorSPX(RIGHTVICTORB_CANID)};
-  VictorSPX *m_rightVictorC{new VictorSPX(RIGHTVICTORC_CANID)};
+  VictorSPX *m_leftVictorB{new VictorSPX(LEFT_VICTORB_CANID)};
+  VictorSPX *m_leftVictorC{new VictorSPX(LEFT_VICTORC_CANID)};
+  VictorSPX *m_rightVictorB{new VictorSPX(RIGHT_VICTORB_CANID)};
+  VictorSPX *m_rightVictorC{new VictorSPX(RIGHT_VICTORC_CANID)};
 
-  Drive *m_drive
+  Drive *m_drive;
 };
 }

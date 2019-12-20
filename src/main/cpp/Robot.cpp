@@ -7,10 +7,9 @@
 
 #include "Robot.h"
 
-#include <iostream>
-
 #include <frc/smartdashboard/SmartDashboard.h>
-namespace frc973{
+
+namespace frc973 {
 
 Robot::Robot() : frc::TimedRobot() {
   m_leftTalonA->ConfigFactoryDefault();
@@ -54,7 +53,7 @@ void Robot::AutonomousInit() {
   m_autoSelected = m_chooser.GetSelected();
   // m_autoSelected = SmartDashboard::GetString("Auto Selector",
   //     kAutoNameDefault);
-  std::cout << "Auto selected: " << m_autoSelected << std::endl;
+  // std::cout << "Auto selected: " << m_autoSelected << std::endl;
 
   if (m_autoSelected == kAutoNameCustom) {
     // Custom Auto goes here
@@ -78,6 +77,7 @@ void Robot::TeleopPeriodic() {}
 void Robot::TestPeriodic() {}
 
 }
+
 #ifndef RUNNING_FRC_TESTS
 int main() { return frc::StartRobot<frc973::Robot>(); }
 #endif
